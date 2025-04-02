@@ -5,7 +5,6 @@ const Navbar = () => {
 
   return (
     <div className="w-full">
-      {/* Üst Banner */}
       <div className="w-full bg-[#4B0082] text-white py-2 px-4 hidden md:block">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
@@ -53,10 +52,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Ana Navbar */}
       <div className="container mx-auto py-4 px-4">
         <div className="flex items-center justify-between">
-          {/* Desktop Menü */}
           <div className="hidden md:flex items-center gap-8">
             <button className="bg-[#F0F0FF] px-4 py-2 rounded-full text-[#4B0082]">
               Home
@@ -75,7 +72,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Logo - Her zaman görünür */}
           <div className="flex items-center">
             <div className="bg-[#4B0082] p-4 rounded-full">
               <svg
@@ -90,7 +86,6 @@ const Navbar = () => {
             <span className="ml-2 text-xl font-bold">Logo</span>
           </div>
 
-          {/* Desktop Sağ Butonlar */}
           <div className="hidden md:flex items-center gap-4">
             <button className="flex items-center gap-2 text-gray-600 hover:text-[#4B0082]">
               <svg
@@ -124,7 +119,6 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobil Hamburger Menü Butonu */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2"

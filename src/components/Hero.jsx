@@ -20,9 +20,7 @@ const Hero = () => {
   return (
     <div className="w-full bg-[#F8F9FF] min-h-screen relative overflow-hidden">
       <div className="w-full px-4 md:px-[140px] py-12 md:py-24">
-        {/* Ana İçerik */}
         <div className="flex flex-col md:flex-row items-end justify-between gap-8 md:gap-[140px] mb-16">
-          {/* Sol Taraf - Metin ve Slider */}
           <div className="w-full md:w-[580px] z-10">
             <div className="mb-8">
               <span className="text-[#4B0082] font-medium mb-4 block">
@@ -73,9 +71,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Sağ Taraf - Form */}
           <div className="w-full md:w-[420px] bg-white rounded-2xl p-8 shadow-lg">
-            {/* Tab Butonları */}
             <div className="flex mb-8 relative">
               <button
                 className={`flex-1 py-4 text-lg font-medium ${
@@ -103,7 +99,6 @@ const Hero = () => {
               <div className="absolute bottom-0 w-full h-[1px] bg-gray-200" />
             </div>
 
-            {/* Form Alanları */}
             <div className="space-y-6">
               <input
                 type="text"
@@ -169,14 +164,13 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* İstatistikler - Ortalanmış */}
-        <div className="flex justify-center gap-24">
+        <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-24">
           <div className="flex items-center gap-3">
             <div className="flex -space-x-2">
               {[...Array(6)].map((_, i) => (
                 <div
                   key={i}
-                  className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white overflow-hidden"
+                  className="w-6 md:w-8 h-6 md:h-8 rounded-full bg-gray-200 border-2 border-white overflow-hidden"
                 >
                   <img
                     src={`https://i.pravatar.cc/150?img=${i + 1}`}
@@ -185,17 +179,19 @@ const Hero = () => {
                   />
                 </div>
               ))}
-              <div className="w-8 h-8 rounded-full bg-[#4B0082] border-2 border-white flex items-center justify-center text-white text-xs">
+              <div className="w-6 md:w-8 h-6 md:h-8 rounded-full bg-[#4B0082] border-2 border-white flex items-center justify-center text-white text-xs">
                 +
               </div>
             </div>
             <div>
-              <p className="font-bold text-xl">72k+</p>
-              <p className="text-sm text-gray-500">Happy Customers</p>
+              <p className="font-bold text-lg md:text-xl">72k+</p>
+              <p className="text-xs md:text-sm text-gray-500">
+                Happy Customers
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-lg bg-gray-100 overflow-hidden">
+            <div className="w-10 md:w-12 h-10 md:h-12 rounded-lg bg-gray-100 overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1518780664697-55e3ad937233"
                 alt="House"
@@ -203,14 +199,15 @@ const Hero = () => {
               />
             </div>
             <div>
-              <p className="font-bold text-xl">200+</p>
-              <p className="text-sm text-gray-500">New Listings Everyday!</p>
+              <p className="font-bold text-lg md:text-xl">200+</p>
+              <p className="text-xs md:text-sm text-gray-500">
+                New Listings Everyday!
+              </p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Arka Plan Dekoratif Öğeler */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#4B0082] rounded-full filter blur-3xl opacity-10 -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4B0082] rounded-full filter blur-3xl opacity-10 -z-10 transform -translate-x-1/2 translate-y-1/2"></div>
     </div>
