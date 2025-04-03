@@ -5,7 +5,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full">
-      <div className="w-full bg-[#4B0082] text-white py-2 px-4 hidden md:block">
+      <div className="w-full bg-[#3A0CA3] text-white py-2 px-4 hidden md:block">
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
             <span className="flex items-center gap-2">
@@ -52,7 +52,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="container mx-auto py-4 px-4">
+      <div className="container mx-auto py-4 px-4 bg-white">
         <div className="flex items-center justify-between">
           <div className="hidden md:flex items-center gap-8">
             <button className="bg-[#F0F0FF] px-4 py-2 rounded-full text-[#4B0082]">
@@ -73,7 +73,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center">
-            <div className="bg-[#4B0082] p-4 rounded-full">
+            <div className="bg-[#3A0CA3] p-4 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-white"
@@ -102,7 +102,7 @@ const Navbar = () => {
               </svg>
               Login/Register
             </button>
-            <button className="flex items-center gap-2 bg-[#4B0082] text-white px-6 py-2 rounded-full hover:bg-[#3B0062]">
+            <button className="flex items-center gap-2 bg-[#3A0CA3] text-white px-6 py-2 rounded-full hover:bg-[#3B0062]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"

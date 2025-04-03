@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import React from "react";
-
+import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
 const testimonials = [
   {
     id: 1,
@@ -43,46 +43,24 @@ const Testimonials = () => {
     <section className="w-full px-4 md:px-[140px] py-12 md:py-24">
       <div className="flex flex-col md:flex-row gap-8 md:gap-16">
         <div className="flex flex-col md:max-w-md">
-          <span className="text-[#4361EE] text-sm font-medium mb-2">
+          <span className="text-[#4361EE] text-sm font-medium font-poppins mb-2 tracking-widest">
             TESTIMONIALS
           </span>
           <div className="mb-8">
-            <h2 className="text-[32px] md:text-[42px] font-bold mb-4">
+            <h2 className="text-[32px] md:text-[42px] font-bold font-poppins mb-4">
               Look What Our Customers Say!
             </h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 font-poppins">
               Fusce venenatis tellus a felis scelerisque, non pulvinar est
               pellentesque.
             </p>
           </div>
           <div className="hidden md:flex items-center gap-4">
-            <button className="testimonials-prev w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors border border-gray-200">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
+            <button className="testimonials-prev w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors border border-[#4361EE]">
+              <GrLinkPrevious className="text-[#4361EE] text-2xl" />
             </button>
-            <button className="testimonials-next w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors border border-gray-200">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-6 h-6"
-              >
-                <path d="M9 18l6-6-6-6" />
-              </svg>
+            <button className="testimonials-next w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-gray-50 transition-colors border border-[#4361EE]">
+              <GrLinkNext className="text-[#4361EE] text-2xl" />
             </button>
           </div>
         </div>
@@ -107,7 +85,7 @@ const Testimonials = () => {
             className="!static w-full md:w-[500px]"
           >
             {testimonials.map((testimonial) => (
-              <SwiperSlide key={testimonial.id}>
+              <SwiperSlide key={testimonial.id} className="!p-4">
                 <TestimonialCard testimonial={testimonial} />
               </SwiperSlide>
             ))}
@@ -139,11 +117,11 @@ const Testimonials = () => {
 };
 
 const TestimonialCard = ({ testimonial }) => (
-  <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-lg">
+  <div className="bg-white rounded-[32px] p-8 md:p-12 shadow-[10px_10px_30px_0px_rgba(0,0,0,0.1),0px_0px_0px_1px_rgba(0,0,0,0.05)]">
     <div className="flex flex-col">
       <div className="relative mb-6">
-        <div className="absolute top-0 left-0 w-12 h-12 bg-[#E8EBFF] rounded-full -z-10"></div>
-        <div className="absolute top-0 right-0 w-12 h-12 bg-[#FFF4CC] rounded-full -z-10"></div>
+        <div className="absolute top-0 left-0 w-8 h-8 md:w-12 md:h-12 bg-[#E8EBFF] rounded-full -z-10"></div>
+        <div className="absolute top-0 right-0 w-8 h-8 md:w-12 md:h-12 bg-[#FFF4CC] rounded-full -z-10"></div>
       </div>
       <p className="text-[#1A1A1A] text-lg md:text-xl leading-relaxed mb-8">
         {testimonial.content}

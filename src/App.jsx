@@ -7,7 +7,7 @@ import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 function App() {
   return (
-    <div className="w-full min-h-screen bg-[#ECF0F3]">
+    <div className="w-full min-h-screen bg-white">
       <Navbar />
       <Hero />
       <WhoAreWe />

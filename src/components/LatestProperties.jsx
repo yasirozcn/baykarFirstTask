@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
+import { FaFire, FaHome, FaDollarSign } from "react-icons/fa";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -160,14 +162,17 @@ const PropertyCard = ({ property }) => (
       />
       <div className="absolute bottom-4 left-4">
         <span
-          className={`px-4 py-2 rounded-full text-sm font-medium backdrop-blur-md ${
+          className={`px-4 py-2 rounded-full text-sm font-medium backdrop-blur-md flex items-center gap-2 ${
             property.tag === "Popular"
-              ? "bg-white/80 text-red-500 border border-red-100"
+              ? "bg-[#FFE1E1] text-red-500 border border-red-100"
               : property.tag === "New Listing"
-              ? "bg-white/80 text-blue-500 border border-blue-100"
-              : "bg-white/80 text-green-500 border border-green-100"
+              ? "bg-[#D7EEFF] text-blue-500 border border-blue-100"
+              : "bg-[#F1FFF1] text-green-500 border border-green-100"
           }`}
         >
+          {property.tag === "Popular" && <FaFire />}
+          {property.tag === "New Listing" && <FaHome />}
+          {property.tag === "Discounted Price" && <FaDollarSign />}
           {property.tag}
         </span>
       </div>

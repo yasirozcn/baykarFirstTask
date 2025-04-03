@@ -4,7 +4,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Navigation, Pagination } from "swiper/modules";
-
+import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
 const blogs = [
   {
     id: 1,
@@ -42,7 +42,7 @@ const blogs = [
 
 const LatestBlogs = () => {
   return (
-    <section className="w-full bg-[#4B0082] px-4 md:px-[140px] py-12 md:py-24">
+    <section className="w-full bg-[#3A0CA3] px-4 md:px-[140px] py-12 md:py-24">
       <div className="flex flex-col items-center">
         <span className="text-white/80 text-sm font-medium mb-2">
           WHAT'S TRENDING
@@ -83,35 +83,13 @@ const LatestBlogs = () => {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 w-full">
               <div className="flex items-center justify-center w-2/3">
                 <button className="blogs-prev w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-white/90 transition-colors mr-[calc(33.333%-70px)] z-10">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#4B0082"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="w-6 h-6"
-                  >
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
+                  <GrLinkPrevious className="text-[#4B0082] text-2xl" />
                 </button>
                 <button className="blogs-next w-14 h-14 bg-white rounded-full flex items-center justify-center hover:bg-white/90 transition-colors ml-[calc(33.333%-70px)] z-10">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#4B0082"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="w-6 h-6"
-                  >
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
+                  <GrLinkNext className="text-[#4B0082] text-2xl" />
                 </button>
               </div>
-              <div className="blogs-pagination flex gap-4 w-1/3 [&_.swiper-pagination-bullet]:!w-16 [&_.swiper-pagination-bullet]:!h-[2px] [&_.swiper-pagination-bullet]:!rounded-none [&_.swiper-pagination-bullet]:!bg-white/40 [&_.swiper-pagination-bullet]:!mx-1 [&_.swiper-pagination-bullet-active]:![background:rgb(255,255,255)]"></div>
+              <div className="blogs-pagination flex gap-4 !w-1/3 [&_.swiper-pagination-bullet]:!w-16 [&_.swiper-pagination-bullet]:!h-[2px] [&_.swiper-pagination-bullet]:!rounded-none [&_.swiper-pagination-bullet]:!bg-white/40 [&_.swiper-pagination-bullet]:!mx-1 [&_.swiper-pagination-bullet-active]:![background:rgb(255,255,255)]"></div>
             </div>
           </div>
         </div>
@@ -132,7 +110,7 @@ const LatestBlogs = () => {
 
 const BlogCard = ({ blog }) => (
   <article className="group cursor-pointer">
-    <div className="relative h-[220px] rounded-[32px] overflow-hidden mb-6">
+    <div className="relative h-[340px] rounded-[32px] overflow-hidden mb-6">
       <img
         src={blog.image}
         alt={blog.title}
