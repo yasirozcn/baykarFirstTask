@@ -1,11 +1,43 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(sectionId.replace("-section", ""));
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "listings", "services", "blogs"];
+      const currentSection = sections.find((section) => {
+        const element = document.getElementById(`${section}-section`);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      if (currentSection) {
+        setActiveSection(currentSection);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="w-full">
-      <div className="w-full bg-[#3A0CA3] text-white py-2 px-4 hidden md:block">
+    <div className="w-full" id="navbar-container">
+      <div
+        className="w-full bg-[#3A0CA3] text-white py-2 px-4 hidden md:block"
+        id="navbar-top"
+      >
         <div className="container mx-auto flex justify-between items-center">
           <div className="flex items-center">
             <span className="flex items-center gap-2">
@@ -52,22 +84,62 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="container mx-auto py-4 px-4 bg-white">
+      <div className="container mx-auto py-4 px-4 bg-white" id="navbar-main">
         <div className="flex items-center justify-between">
           <div className="hidden md:flex items-center gap-8">
-            <button className="bg-[#F0F0FF] px-4 py-2 rounded-full text-[#4B0082]">
+            <button
+              onClick={() => scrollToSection("home-section")}
+              className={`${
+                activeSection === "home"
+                  ? "bg-[#F0F0FF] text-[#4B0082]"
+                  : "text-gray-600 hover:text-[#4B0082]"
+              } px-4 py-2 rounded-full`}
+              id="nav-home-btn"
+            >
               Home
             </button>
-            <button className="text-gray-600 hover:text-[#4B0082]">
+            <button
+              onClick={() => scrollToSection("about-section")}
+              className={`${
+                activeSection === "about"
+                  ? "bg-[#F0F0FF] text-[#4B0082]"
+                  : "text-gray-600 hover:text-[#4B0082]"
+              } px-4 py-2 rounded-full`}
+              id="nav-about-btn"
+            >
               About
             </button>
-            <button className="text-gray-600 hover:text-[#4B0082]">
+            <button
+              onClick={() => scrollToSection("listings-section")}
+              className={`${
+                activeSection === "listings"
+                  ? "bg-[#F0F0FF] text-[#4B0082]"
+                  : "text-gray-600 hover:text-[#4B0082]"
+              } px-4 py-2 rounded-full`}
+              id="nav-listings-btn"
+            >
               Listings
             </button>
-            <button className="text-gray-600 hover:text-[#4B0082]">
+            <button
+              onClick={() => scrollToSection("services-section")}
+              className={`${
+                activeSection === "services"
+                  ? "bg-[#F0F0FF] text-[#4B0082]"
+                  : "text-gray-600 hover:text-[#4B0082]"
+              } px-4 py-2 rounded-full`}
+              id="nav-services-btn"
+            >
               Services
             </button>
-            <button className="text-gray-600 hover:text-[#4B0082]">
+            <button
+              onClick={() => scrollToSection("blogs-section")}
+              className={`${
+                activeSection === "blogs"
+                  ? "bg-[#F0F0FF] text-[#4B0082]"
+                  : "text-gray-600 hover:text-[#4B0082]"
+              } px-4 py-2 rounded-full`}
+              id="nav-blogs-btn"
+            >
               Blogs
             </button>
           </div>
@@ -142,21 +214,61 @@ const Navbar = () => {
 
         {/* Mobil Menü */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t">
+          <div className="md:hidden mt-4 py-4 border-t" id="mobile-menu">
             <div className="flex flex-col gap-4">
-              <button className="bg-[#F0F0FF] px-4 py-2 rounded-full text-[#4B0082] w-full text-left">
+              <button
+                onClick={() => scrollToSection("home-section")}
+                className={`${
+                  activeSection === "home"
+                    ? "bg-[#F0F0FF] text-[#4B0082]"
+                    : "text-gray-600 hover:text-[#4B0082]"
+                } px-4 py-2 rounded-full w-full text-left`}
+                id="mobile-nav-home-btn"
+              >
                 Home
               </button>
-              <button className="text-gray-600 hover:text-[#4B0082] px-4 py-2">
+              <button
+                onClick={() => scrollToSection("about-section")}
+                className={`${
+                  activeSection === "about"
+                    ? "bg-[#F0F0FF] text-[#4B0082]"
+                    : "text-gray-600 hover:text-[#4B0082]"
+                } px-4 py-2 rounded-full w-full text-left`}
+                id="mobile-nav-about-btn"
+              >
                 About
               </button>
-              <button className="text-gray-600 hover:text-[#4B0082] px-4 py-2">
+              <button
+                onClick={() => scrollToSection("listings-section")}
+                className={`${
+                  activeSection === "listings"
+                    ? "bg-[#F0F0FF] text-[#4B0082]"
+                    : "text-gray-600 hover:text-[#4B0082]"
+                } px-4 py-2 rounded-full w-full text-left`}
+                id="mobile-nav-listings-btn"
+              >
                 Listings
               </button>
-              <button className="text-gray-600 hover:text-[#4B0082] px-4 py-2">
+              <button
+                onClick={() => scrollToSection("services-section")}
+                className={`${
+                  activeSection === "services"
+                    ? "bg-[#F0F0FF] text-[#4B0082]"
+                    : "text-gray-600 hover:text-[#4B0082]"
+                } px-4 py-2 rounded-full w-full text-left`}
+                id="mobile-nav-services-btn"
+              >
                 Services
               </button>
-              <button className="text-gray-600 hover:text-[#4B0082] px-4 py-2">
+              <button
+                onClick={() => scrollToSection("blogs-section")}
+                className={`${
+                  activeSection === "blogs"
+                    ? "bg-[#F0F0FF] text-[#4B0082]"
+                    : "text-gray-600 hover:text-[#4B0082]"
+                } px-4 py-2 rounded-full w-full text-left`}
+                id="mobile-nav-blogs-btn"
+              >
                 Blogs
               </button>
               <button className="flex items-center gap-2 text-gray-600 hover:text-[#4B0082] px-4 py-2">

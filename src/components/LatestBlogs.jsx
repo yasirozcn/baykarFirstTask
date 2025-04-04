@@ -99,7 +99,7 @@ const LatestBlogs = () => {
           {blogs.map((blog) => (
             <BlogCard key={blog.id} blog={blog} />
           ))}
-          <button className="w-full px-8 py-3 rounded-full border border-white text-white font-medium hover:bg-white/10 transition-all duration-300">
+          <button className="w-52 px-4 py-3 mt-16 mb-24 rounded-full border bg-white text-[#3A0CA3] font-medium hover:bg-white/10 transition-all duration-300">
             View more blogs
           </button>
         </div>
