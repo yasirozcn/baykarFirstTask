@@ -19,9 +19,9 @@ const Hero = () => {
 
   return (
     <section className="relative w-full min-h-screen">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full md:w-[1440px] h-[500px] md:h-[900px] rounded-br-[400px] md:rounded-br-[800px] rounded-bl-[400px] md:rounded-bl-[800px] bg-gradient-to-b from-[rgba(76,201,240,0)] to-[rgba(67,97,238,.3)] z-[1]" />
-      <div className="absolute top-[200px] md:top-[354px] left-1/2 md:left-[720px] -translate-x-1/2 -translate-y-1/2 w-[40px] md:w-[60px] h-[40px] md:h-[60px] rounded-full bg-gradient-to-b from-[#4361EE] to-[rgba(67, 97, 238, 0)] z-[2]" />
-      <div className="absolute bottom-[-24px] md:bottom-[-36px] left-4 md:left-9 w-[60px] md:w-[100px] h-[60px] md:h-[100px] rounded-full bg-gradient-to-b from-[rgba(67,97,238,.4)] to-[rgba(67,97,238,0)] z-[999]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full md:w-[1440px] h-[900px] rounded-br-[800px] rounded-bl-[800px] bg-gradient-to-b from-[rgba(76,201,240,0)] to-[rgba(67,97,238,.3)] z-[1]" />
+      <div className="absolute top-[354px] left-1/2 md:left-[720px] -translate-x-1/2 -translate-y-1/2 w-[60px] h-[60px] rounded-full bg-gradient-to-b from-[#4361EE] to-[rgba(67, 97, 238, 0)] z-[2]" />
+      <div className="absolute bottom-[-36px] left-9 w-[100px] h-[100px] rounded-full bg-gradient-to-b from-[rgba(67,97,238,.4)] to-[rgba(67,97,238,0)] z-[999]" />
 
       <div className="w-full bg-white min-h-screen relative overflow-y-auto">
         <div className="w-full px-4 md:px-[140px] py-8 md:py-24 relative z-[10]">
